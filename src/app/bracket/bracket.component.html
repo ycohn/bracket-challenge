@@ -1,3 +1,7 @@
-<p>
-  bracket works!
-</p>
+<main id="tournament">
+    <ul *ngFor="let match of matches | row:(Math.ceil(matches.length/2)); let i = index" [ngClass]="'round round-'+ (i+2)">
+      <li class="spacer">&nbsp;</li>
+      <app-match *ngFor="let team of match; let j = index" [matchInfo]="team.node" [placement]="j % 2 == 0 ? 'top' : 'bottom'" [tournamentWinner]="i == 2 ? true : false" [sportType]="sportType"></app-match>  
+    </ul>  
+</main>
+

@@ -1,0 +1,6 @@
+<li [ngClass]="'game game-' + placement + ' winner'">{{matchInfo.winner.name}} <span></span></li>
+<li [ngClass]="placement == 'top' ? 'game game-spacer' : 'spacer'">&nbsp;</li>
+<div *ngIf="tournamentWinner == true"> 
+  <sf-soccer *ngIf="sportType == 'soccer'" [matchInfo]="matchInfo.matchInfo"></sf-soccer>
+  <sf-football *ngIf="sportType == 'football'" [matchInfo]="matchInfo.matchInfo"></sf-football>
+</div>
